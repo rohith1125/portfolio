@@ -1,400 +1,856 @@
-<!--
-/* Copyright (C) 2021 Sai Rohith T - All Rights Reserved
- * The use, distribution and modifications to this code is
- * a violation and infringes copyright act.
- */
--->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Sai Rohith T | CS Student</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="description" content="CS Student, building good ideas." />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="bundle.css" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png?" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png?" />
-    <link rel="icon" type="image/png" href="favicon-196x196.png?" sizes="196x196" />
-    <link rel="icon" type="image/png" href="favicon-96x96.png?" sizes="96x96" />
-    <link rel="icon" type="image/png" href="favicon-32x32.png?" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png?" sizes="16x16" />
-    <link rel="icon" type="image/png" href="favicon-128.png?" sizes="128x128" />
-    <link rel="icon" type="image/png" href="favicon-96x96.png" />
-    <meta name="application-name" content="Sai Rohith T | CS Student" />
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="mstile-144x144.png?" />
-    <meta name="msapplication-square70x70logo" content="mstile-70x70.png?" />
-    <meta name="msapplication-square150x150logo" content="mstile-150x150.png?" />
-    <meta name="msapplication-square310x310logo" content="mstile-310x310.png?" />
-    <meta name="theme-color" content="#dd4056" />
-    <meta name="google-site-verification" content="GK0yaDwgJ2fsteMI1kxfJcFWn0J8WhLUgK0dA-PzHso" />
-    <link rel="canonical" href="https://www.github.com/rohith1125" />
-   <!-- <script async src="https://arc.io/widget.min.js#34tfHE1h"></script> -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Rohith Tanuku — AI Engineer</title>
+<meta name="description" content="Sai Rohith Tanuku — AI Engineer specializing in LLMs, distributed systems, and production ML pipelines. MS Computer Science, University of Pittsburgh.">
+<meta name="keywords" content="AI Engineer, Machine Learning, LLM, Python, PyTorch, Sai Rohith Tanuku, portfolio">
+<meta name="author" content="Sai Rohith Tanuku">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Sai Rohith Tanuku — AI Engineer">
+<meta property="og:description" content="AI Engineer building intelligent systems that scale. LLMs, distributed pipelines, production ML.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rohith1125.github.io">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sai Rohith Tanuku — AI Engineer">
+<meta name="twitter:description" content="AI Engineer building intelligent systems that scale. LLMs, distributed pipelines, production ML.">
+<link rel="canonical" href="https://rohith1125.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #f5f5f5;
+  --gray-200: #e0e0e0;
+  --gray-400: #999999;
+  --gray-600: #555555;
+  --gray-800: #1a1a1a;
+  --gray-900: #0d0d0d;
+  --accent: #0026ff;
+  --accent-dim: rgba(0,38,255,0.15);
+  --font-main: 'Montserrat', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-dur: 0.45s;
+  --lh: 1.618;
+  --shadow-brutal: 6px 6px 0 var(--white);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-main);
+  line-height: var(--lh);
+  overflow-x: hidden;
+  cursor: none;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+#cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease);
+}
+#cursor-follower {
+  position: fixed;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: left 0.12s var(--ease), top 0.12s var(--ease);
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gray-600); border-radius: 2px; }
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 2.5rem;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: padding var(--ease-dur) var(--ease);
+}
+nav.scrolled { padding: 0.85rem 2.5rem; }
+.nav-logo {
+  font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700;
+  letter-spacing: 0.08em; color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gray-400); text-decoration: none;
+  transition: color var(--ease-dur) var(--ease); position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -3px; left: 0;
+  width: 0; height: 1px; background: var(--white);
+  transition: width var(--ease-dur) var(--ease);
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.nav-hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s var(--ease); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.mobile-menu {
+  display: none; position: fixed; inset: 0; background: var(--black);
+  z-index: 999; flex-direction: column; justify-content: center;
+  align-items: center; gap: 2.5rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 2rem; font-weight: 800; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--white); text-decoration: none;
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--accent); }
+#hero {
+  position: relative; width: 100%; height: 100vh; min-height: 600px;
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: flex-start; padding: 0 8vw; overflow: hidden;
+}
+#hero-canvas { position: absolute; inset: 0; z-index: 0; }
+.border__top, .border__bottom, .border__left, .border__right {
+  position: absolute; background: rgba(255,255,255,0.15); z-index: 2; pointer-events: none;
+}
+.border__top    { top: 2rem; left: 2rem; right: 2rem; height: 1px; }
+.border__bottom { bottom: 2rem; left: 2rem; right: 2rem; height: 1px; }
+.border__left   { left: 2rem; top: 2rem; bottom: 2rem; width: 1px; }
+.border__right  { right: 2rem; top: 2rem; bottom: 2rem; width: 1px; }
+.border__top::before, .border__top::after,
+.border__bottom::before, .border__bottom::after {
+  content: ''; position: absolute; width: 6px; height: 6px;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.border__top::before { top: -3px; left: -3px; }
+.border__top::after  { top: -3px; right: -3px; }
+.border__bottom::before { bottom: -3px; left: -3px; }
+.border__bottom::after  { bottom: -3px; right: -3px; }
+.hero-content { position: relative; z-index: 3; max-width: 900px; }
+.hero-eyebrow {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1rem; opacity: 0; transform: translateY(20px);
+  animation: fadeUp 0.8s var(--ease) 0.3s forwards;
+}
+.hero-name {
+  font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 900; line-height: 0.98;
+  letter-spacing: -0.04em; margin-bottom: 1rem; opacity: 0;
+  transform: translateY(30px); animation: fadeUp 0.9s var(--ease) 0.5s forwards;
+}
+.hero-name .line2 { -webkit-text-stroke: 1px rgba(255,255,255,0.5); color: transparent; }
+.hero-typed-wrap {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); font-weight: 500; color: var(--gray-400);
+  margin-bottom: 2rem; min-height: 2em; opacity: 0; transform: translateY(20px);
+  animation: fadeUp 0.8s var(--ease) 0.7s forwards;
+}
+#typed-text { color: var(--white); }
+.typed-cursor {
+  display: inline-block; width: 2px; height: 1.1em; background: var(--white);
+  margin-left: 2px; vertical-align: text-bottom;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.hero-desc {
+  max-width: 560px; font-size: 1rem; color: var(--gray-400);
+  line-height: var(--lh); margin-bottom: 2.5rem; opacity: 0;
+  transform: translateY(20px); animation: fadeUp 0.8s var(--ease) 0.9s forwards;
+}
+.hero-actions {
+  display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0;
+  transform: translateY(20px); animation: fadeUp 0.8s var(--ease) 1.1s forwards;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.85rem 1.75rem; font-family: var(--font-main);
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; text-decoration: none; cursor: pointer;
+  transition: box-shadow var(--ease-dur) var(--ease), transform var(--ease-dur) var(--ease);
+  border: none;
+}
+.btn-primary { background: var(--white); color: var(--black); box-shadow: var(--shadow-brutal); }
+.btn-primary:hover { box-shadow: 0 0 0 var(--white); transform: translate(6px,6px); }
+.btn-outline {
+  background: transparent; color: var(--white);
+  border: 1px solid rgba(255,255,255,0.4); box-shadow: var(--shadow-brutal);
+}
+.btn-outline:hover { box-shadow: 0 0 0 var(--white); transform: translate(6px,6px); }
+.hero-scroll-hint {
+  position: absolute; bottom: 3.5rem; left: 50%; transform: translateX(-50%);
+  z-index: 3; display: flex; flex-direction: column; align-items: center;
+  gap: 0.5rem; opacity: 0; animation: fadeUp 0.8s var(--ease) 1.6s forwards;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%,100% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(0.5); opacity: 0.3; }
+}
+.scroll-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gray-600); }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+section { padding: 7rem 8vw; }
+.section-label {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em;
+  line-height: 1.1; margin-bottom: 1rem;
+}
+.section-title .outline { -webkit-text-stroke: 1px rgba(255,255,255,0.4); color: transparent; }
+.section-divider { width: 60px; height: 2px; background: var(--white); margin-bottom: 3rem; }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.93); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+#about { background: var(--gray-900); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.about-text p { font-size: 1.05rem; color: var(--gray-400); line-height: var(--lh); margin-bottom: 1.25rem; }
+.about-text p strong { color: var(--white); font-weight: 600; }
+.about-edu { margin-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; }
+.edu-item { margin-bottom: 1.5rem; }
+.edu-school { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
+.edu-degree { font-size: 0.88rem; color: var(--gray-400); margin-bottom: 0.2rem; }
+.edu-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.05em; }
+.edu-meta .gpa { color: var(--accent); font-weight: 700; }
+.counters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.counter-card {
+  border: 1px solid rgba(255,255,255,0.1); padding: 1.75rem;
+  background: rgba(255,255,255,0.02); position: relative; overflow: hidden;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.counter-card:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-3px); }
+.counter-num { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; color: var(--white); margin-bottom: 0.4rem; }
+.counter-suffix { font-size: 1.5rem; color: var(--accent); }
+.counter-label { font-size: 0.8rem; color: var(--gray-400); font-weight: 500; letter-spacing: 0.05em; line-height: 1.4; }
+#experience { background: var(--black); }
+.timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 2rem; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.2) 90%, transparent);
+}
+.timeline-item { position: relative; padding: 0 0 3.5rem 2.5rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -5px; top: 6px; width: 10px; height: 10px;
+  background: var(--white); border-radius: 50%; border: 2px solid var(--black);
+  box-shadow: 0 0 0 1px var(--white); transition: background 0.3s, box-shadow 0.3s;
+}
+.timeline-item:hover .timeline-dot { background: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 16px var(--accent); }
+.timeline-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gray-600); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.timeline-company { font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 0.15rem; }
+.timeline-role { font-size: 0.85rem; font-weight: 500; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 1rem; }
+.timeline-bullets { list-style: none; }
+.timeline-bullets li { font-size: 0.92rem; color: var(--gray-400); line-height: var(--lh); padding-left: 1.2rem; position: relative; margin-bottom: 0.5rem; }
+.timeline-bullets li::before { content: '\2192'; position: absolute; left: 0; color: var(--gray-600); font-size: 0.75rem; top: 0.15em; }
+#skills { background: var(--gray-900); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.skill-category { border: 1px solid rgba(255,255,255,0.08); padding: 1.75rem; background: rgba(255,255,255,0.02); transition: border-color 0.3s var(--ease); }
+.skill-category:hover { border-color: rgba(255,255,255,0.2); }
+.skill-cat-label {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.6rem;
+}
+.skill-cat-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skill-tag {
+  display: inline-block; padding: 0.3rem 0.75rem; font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.04em; border: 1px solid rgba(255,255,255,0.15); color: var(--gray-200);
+  background: rgba(255,255,255,0.04); transition: all 0.25s var(--ease);
+}
+.skill-tag:hover { border-color: var(--white); background: var(--white); color: var(--black); transform: translateY(-2px); }
+#projects { background: var(--black); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+.project-card {
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.015);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: border-color 0.35s var(--ease), transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.project-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.project-header {
+  height: 130px; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; padding: 1.25rem;
+}
+.project-header::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 1; }
+.project-header-bg { position: absolute; inset: 0; background-size: 400% 400%; animation: gradShift 8s ease infinite; }
+@keyframes gradShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.project-num { position: relative; z-index: 2; font-family: var(--font-mono); font-size: 0.7rem; color: rgba(255,255,255,0.5); letter-spacing: 0.15em; }
+.project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.project-title { font-size: 1.05rem; font-weight: 800; color: var(--white); margin-bottom: 0.6rem; line-height: 1.3; }
+.project-desc { font-size: 0.84rem; color: var(--gray-400); line-height: var(--lh); flex: 1; margin-bottom: 1.25rem; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+.stack-tag { font-family: var(--font-mono); font-size: 0.67rem; padding: 0.2rem 0.55rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--gray-400); letter-spacing: 0.04em; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.76rem;
+  font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white);
+  text-decoration: none; padding: 0.6rem 1.1rem; border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.3s var(--ease); align-self: flex-start;
+}
+.project-link:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+.project-link svg { width: 12px; height: 12px; }
+.grad-1 { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); background-size: 400% 400%; }
+.grad-2 { background: linear-gradient(135deg, #0d0d0d, #1a1a2e, #16213e); background-size: 400% 400%; }
+.grad-3 { background: linear-gradient(135deg, #000428, #004e92, #000428); background-size: 400% 400%; }
+.grad-4 { background: linear-gradient(135deg, #1a1a1a, #2d1b69, #1a1a1a); background-size: 400% 400%; }
+.grad-5 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); background-size: 400% 400%; }
+.grad-6 { background: linear-gradient(135deg, #16222a, #3a6073, #16222a); background-size: 400% 400%; }
+#contact { background: var(--gray-900); text-align: center; position: relative; overflow: hidden; }
+#contact::before {
+  content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 600px; background: radial-gradient(ellipse, rgba(0,38,255,0.06), transparent 70%); pointer-events: none;
+}
+.contact-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+.contact-tagline { font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1.25rem; }
+.contact-sub { font-size: 1rem; color: var(--gray-400); margin-bottom: 2.5rem; line-height: var(--lh); }
+.contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;
+  color: var(--gray-400); text-decoration: none; font-family: var(--font-mono);
+  padding: 0.6rem 1rem; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s var(--ease);
+}
+.contact-item:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+.contact-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+footer {
+  background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem 8vw; display: flex; justify-content: space-between;
+  align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.footer-left { font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray-600); }
+.footer-left span { color: var(--white); }
+.footer-right { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.05em; }
+.footer-right a { color: var(--gray-600); text-decoration: none; }
+.footer-right a:hover { color: var(--white); }
+.footer-hint { font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray-600); display: flex; align-items: center; gap: 0.4rem; }
+.footer-hint kbd { font-family: var(--font-mono); padding: 0.1rem 0.35rem; border: 1px solid rgba(255,255,255,0.2); font-size: 0.68rem; color: var(--gray-400); background: rgba(255,255,255,0.04); }
+#terminal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.92);
+  z-index: 10000; display: none; justify-content: center; align-items: center;
+  backdrop-filter: blur(6px);
+}
+#terminal.open { display: flex; }
+.terminal-window {
+  width: min(700px, 92vw); max-height: 70vh; background: #0a0a0a;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 80px rgba(0,38,255,0.12), 6px 6px 0 var(--white);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.terminal-bar {
+  display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.terminal-dots { display: flex; gap: 6px; }
+.terminal-dot { width: 11px; height: 11px; border-radius: 50%; }
+.t-red { background: #ff5f57; } .t-yellow { background: #febc2e; } .t-green { background: #28c840; }
+.terminal-title { flex: 1; text-align: center; font-family: var(--font-mono); font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.1em; }
+.terminal-body { flex: 1; overflow-y: auto; padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.7; color: #ccc; }
+.terminal-body::-webkit-scrollbar { width: 3px; }
+.terminal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); }
+.t-line { margin-bottom: 0.1rem; white-space: pre-wrap; word-break: break-all; }
+.t-prompt { color: var(--accent); }
+.t-success { color: #28c840; }
+.t-error { color: #ff5f57; }
+.t-info { color: #febc2e; }
+.t-dim { color: var(--gray-600); }
+.t-white { color: var(--white); }
+.terminal-input-row {
+  display: flex; align-items: center; padding: 0.75rem 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08); gap: 0.5rem;
+}
+.terminal-prompt-label { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
+#terminal-input { flex: 1; background: none; border: none; outline: none; font-family: var(--font-mono); font-size: 0.8rem; color: var(--white); caret-color: var(--white); }
+@media (max-width: 768px) {
+  section { padding: 5rem 6vw; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .counters-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  section { padding: 4rem 5vw; }
+  .counters-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  nav { padding: 1rem 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1 !important; transform: none !important; }
+}
+::selection { background: var(--accent); color: var(--white); }
+</style>
 </head>
-
 <body>
-    <main class="main">
-
-        <header class="header" role="header">
-            <div class="MastHead" data-role="header" data-position="fixed" data-tap-toggle="false">
-                <div class="HeaderLft">
-                    <!-- Change this href value to href="https://iamsairohith.github.io/thisisasecuresite/" from href="http://rohith.world/" after domain expires-->
-                    <a href="http://therohith.club/" data-transition="slide" data-direction="reverse"><img alt="" title="" src="apple-touch-icon-57x57.png" /></a>
-                </div>
-                <div class="HeaderRgt">
-                    <div class="TopRedBox">
-                        <a href="#" data-rel="back" data-transition="slide" data-direction="reverse" id=saveFav></a>
-                    </div>
-                </div>
-                <div class="HeaderLogo"></div>
-            </div>
-            <div class="header__wrapper">
-                <!--central__logo code start->
-                <a class="central__logo">
-                    <a href="https://iamsairohith.github.io/website/"><img src="apple-touch-icon-57x57.png" alt="central logo"></a>
-                </a>
-                <!-central__logo code end-->
-                <div class="header__contact">
-                    <a href="mailto:tanukusai@hotmail.com" title="My email"><svg width="24" height="24">
-                <use xlink:href="icons.svg#mail" />
-              </svg>
-              Drop a Mail</a
-            >
-          </div>
-                    <button type="button" class="c-hamburger" title="Menu">
-            <span class="c-hamburger__patty"></span>
-            <span class="c-hamburger__patty"></span>
-            <span class="c-hamburger__patty"></span>
-          </button>
-                </div>
-                <nav class="nav" role="navigation">
-                    <ul class="nav__list">     
-            <li class="nav__item">
-              <a data-link href="#about" class="nav__link" data-scroll
-                >About Me</a
-              >
-            </li>
-                         <li class="nav__item">
-                            <a data-link href="#work" class="nav__link" data-scroll>Projects</a
-              >
-            </li>
-          </ul>
-          <ul class="nav__list nav__list--sm">
-            <li class="nav__item">
-              <a
-                target="_blank"
-                href="https://github.com/rohith1125"
-                class="nav__link nav__link--sm"
-                >Github</a
-              >
-            </li>
-            <li class="nav__item">
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/rohit-t-80874120b/"
-                class="nav__link nav__link--sm"
-                >LinkedIn</a
-              >
-            </li>
-            <li class="nav__item">
-              <a
-                target="_blank"
-                href="https://twitter.com/Sai_Rohith_T"
-                class="nav__link nav__link--sm"
-                >Twitter</a
-              >
-              <li class="nav__item">
-                <a
-                  target="_blank"
-                  href="https://rohithcodes.medium.com/"
-                  class="nav__link nav__link--sm"
-                  >Medium</a
-                >
-              </li>
-              <li class="nav__item">
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/thisissairohith/"
-                  class="nav__link nav__link--sm"
-                  >Instagram</a
-                >
-              </li>
-                 <li class="nav__item">
-                <a
-                  target="_blank"
-                  href="Buissness.html"
-                  class="nav__link nav__link--sm"
-                  >Contact Info</a
-                >
-              </li>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <section class="home" data-full-height>
-        <div class="home__wrapper">
-          <h1 class="home__heading">
-            Sai Rohith<br />Computer Science Student
-          </h1>
-          <p>
-            Check out some of my
-            <a class="home__link" href="#work" data-scroll>Projects</a>, or see what I'm <a class="home__link" href="#about" data-scroll>about</a>.
-                    </p>
-                </div>
-                <div class="home__bg"></div>
-                <div class="border">
-                    <div class="border__left"></div>
-                    <div class="border__right"></div>
-                    <div class="border__top"></div>
-                    <div class="border__bottom"></div>
-                </div>
-                </section>
-                <section class="work" id="work" data-full-height>
-                    <div class="work__wrapper">
-                        <h1 class="work__heading">Projects</h1>
-                        <ul class="work__list">
-                            <li class="work__item" data-work="Keylogger" data-add-class="work__item--active">
-                                <div class="work__item-wrapper">
-                                    <h2 class="work__item-heading">Keylogger</h2>
-                                    <p class="work__item-tagline">Capture Keystrokes</p>
-                                </div>
-                                <div class="work__item-tag"><span>Java</span></div>
-                                <div class="work__item-bg"></div>
-                            </li>
-                            <li class="work__item" data-work="PasswordManager" data-add-class="work__item--active">
-                                <div class="work__item-wrapper">
-                                    <h2 class="work__item-heading">Password Manager</h2>
-                                    <p class="work__item-tagline">Developed a Password Manager using Oracle Database to store and retrieve Passwords locally.</p>
-                                </div>
-                                <div class="work__item-tag"><span>SQL</span></div>
-                                <div class="work__item-bg"></div>
-                            </li>
-                            <!--  <li class="work__item" data-work="Keylogger" data-add-class="work__item--active">
-                                <div class="work__item-wrapper">
-                                    <h2 class="work__item-heading">Keylogger</h2>
-                                    <p class="work__item-tagline">Capture Keystrokes</p>
-                                </div>
-                                <div class="work__item-tag"><span>Java</span></div>
-                                <div class="work__item-bg"></div>
-                            </li>
-                            <li class="work__item" data-work="PasswordManager" data-add-class="work__item--active">
-                                <div class="work__item-wrapper">
-                                    <h2 class="work__item-heading">Password Manager</h2>
-                                    <p class="work__item-tagline">Developed a web Password manager using Oracle Database to store and retrieve Passwords locally.</p>
-                                </div>
-                                <div class="work__item-tag"><span>SQL</span></div>
-                                <div class="work__item-bg"></div>
-                            </li>-->
-                        </ul>
-                    </div>
-                </section>
-                <section class="work-details" id="work-details">
-                    <header class="work-details__header">
-                        <h1 data-work-title class="work-details__title"></h1>
-                    </header>
-                    <div class="work-details__wrapper">
-                        <div class="work-details__intro">
-                            <div class="work-details__left work-details__fade">
-                                <h2>Place</h2>
-                                <p data-work-client></p>
-                                <h2>What I Did</h2>
-                                <p data-work-what-i-did></p>
-                            </div>
-                            <div class="work-details__right work-details__fade">
-                                <h2 data-work-tagline></h2>
-                                <p data-work-description></p>
-                            </div>
-                        </div>
-                        <div class="work-details__intro">
-                            <div class="work-details__left work-details__fade">
-                                <h2>Tech</h2>
-                                <ul data-work-tech class="c-list c-list--clean"></ul>
-                            </div>
-                            <div class="work-details__right work-details__fade">
-                                <h2>Process</h2>
-                                <div data-work-process></div>
-                                <button type="button" class="c-button work-details__btn work-details-close">
-                <svg width="24" height="24">
-                  <use xlink:href="icons.svg#back" />
-                </svg>
-                <span>Back to projects</span>
-              </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="work-details__tag" data-work-tag></div>
-                    <button type="button" class="work-details__close work-details-close work-details__fade">
-          <svg width="20" height="20">
-            <use xlink:href="icons.svg#close" />
-          </svg>
-        </button>
-                </section>
-                <section class="about" id="about" data-full-height>
-                    <article class="about__wrapper">
-                        <h1 class="about__heading">About Me</h1>
-                        <div class="about__text">
-                            <p class="about__text-large">
-                                Hi I'm Rohith, a CS Student based in Hyderabad IN. I'm currently experimenting and testing out all the fields to find my interests.
-                            </p>
-                            <p>To find out more information and to view all my projects visit my
-                                <a class="foreign__link" href="https://github.com/rohith1125" data-scroll>GitHub</a>.
-                            </p>
-                        </div>
-                        <div class="c-grid about__skills" data-add-class="about__skills--active">
-                            <div class="c-grid__col">
-                                <h2 class="u-heading-6">Core<br />Skillset</h2>
-                                <ul class="c-list c-list--clean">
-                                    <li class="c-list__item">Java</li>
-                                    <li class="c-list__item">Dart</li>
-                                    <li class="c-list__item">Shell Scripting</li>
-                                    <li class="c-list__item">Flutter</li>
-                                </ul>
-                            </div>
-                            <div class="c-grid__col">
-                                <h2 class="u-heading-6">Working<br />Knowledge</h2>
-                                <ul class="c-list c-list--clean">
-                                    <li class="c-list__item">Java</li>
-                                    <li class="c-list__item">C</li>
-                                    <li class="c-list__item">C++</li>
-                                    <li class="c-list__item">Dart</li>
-                                    <li class="c-list__item">Python</li>
-                                    <li class="c-list__item">PHP</li>
-                                    <li class="c-list__item">HTML,CSS,JS</li>
-                                </ul>
-                            </div>
-                            <div class="c-grid__col">
-                                <h2 class="u-heading-6">Tools</h2>
-                                <ul class="c-list c-list--clean">
-                                    <li class="c-list__item">Git</li>
-                                    <li class="c-list__item">VS Code</li>
-                                    <li class="c-list__item">Vim</li>
-                                    <li class="c-list__item">GCP</li>
-                                    <li class="c-list__item">Unity</li>
-                                    <li class="c-list__item">Flutter</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <br>
-                    <!-- <div class="float-right"> 
-                    <iframe style="border-radius:25px" src="https://open.spotify.com/embed/track/6f7qFjos0WWqvtEnwFDS0a?utm_source=generator&theme=0" width="75%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                    </div>-->
-                        <br>
-                    </article>
-                </section>
-
-                <footer class="footer" id="footer" role="footer">
-                    <div class="u-wrapper">
-                        <span class="footer__text"><a class="home__link" href="mailto:tanukusai@hotmail.com"
-              >Drop An Email</a
-            ></span
-          >
-          <div class="footer__links">
-            <a
-              target="_blank"
-              href="https://github.com/rohith1125"
-              class="footer__links-link"
-              ><svg width="23" height="23">
-                <use xlink:href="icons.svg#github?" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="github"
-                  version="1.1"
-                  x="0"
-                  y="0"
-                  viewBox="0 0 438.5 438.5"
-                  xml:space="preserve"
-                >
-                  <path
-                    d="M409.1 114.6c-19.6-33.6-46.2-60.2-79.8-79.8C295.7 15.2 259.1 5.4 219.3 5.4c-39.8 0-76.5 9.8-110.1 29.4 -33.6 19.6-60.2 46.2-79.8 79.8C9.8 148.2 0 184.9 0 224.6c0 47.8 13.9 90.7 41.8 128.9 27.9 38.2 63.9 64.6 108.1 79.2 5.1 1 8.9 0.3 11.4-2 2.5-2.3 3.7-5.1 3.7-8.6 0-0.6 0-5.7-0.1-15.4 -0.1-9.7-0.1-18.2-0.1-25.4l-6.6 1.1c-4.2 0.8-9.5 1.1-15.8 1 -6.4-0.1-13-0.8-19.8-2 -6.9-1.2-13.2-4.1-19.1-8.6 -5.9-4.5-10.1-10.3-12.6-17.6l-2.9-6.6c-1.9-4.4-4.9-9.2-9-14.6 -4.1-5.3-8.2-8.9-12.4-10.8l-2-1.4c-1.3-1-2.6-2.1-3.7-3.4 -1.1-1.3-2-2.7-2.6-4 -0.6-1.3-0.1-2.4 1.4-3.3 1.5-0.9 4.3-1.3 8.3-1.3l5.7 0.9c3.8 0.8 8.5 3 14.1 6.9 5.6 3.8 10.2 8.8 13.8 14.8 4.4 7.8 9.7 13.8 15.8 17.8 6.2 4.1 12.4 6.1 18.7 6.1 6.3 0 11.7-0.5 16.3-1.4 4.6-1 8.8-2.4 12.8-4.3 1.7-12.8 6.4-22.6 14-29.4 -10.8-1.1-20.6-2.9-29.3-5.1 -8.7-2.3-17.6-6-26.8-11.1 -9.2-5.1-16.9-11.5-23-19.1 -6.1-7.6-11.1-17.6-15-30 -3.9-12.4-5.9-26.6-5.9-42.8 0-23 7.5-42.6 22.6-58.8 -7-17.3-6.4-36.7 2-58.2 5.5-1.7 13.7-0.4 24.6 3.9 10.9 4.3 18.8 8 23.8 11 5 3 9.1 5.6 12.1 7.7 17.7-4.9 36-7.4 54.8-7.4s37.1 2.5 54.8 7.4l10.8-6.8c7.4-4.6 16.2-8.8 26.3-12.6 10.1-3.8 17.8-4.9 23.1-3.1 8.6 21.5 9.3 40.9 2.3 58.2 15 16.2 22.6 35.8 22.6 58.8 0 16.2-2 30.5-5.9 43 -3.9 12.5-8.9 22.5-15.1 30 -6.2 7.5-13.9 13.9-23.1 19 -9.2 5.1-18.2 8.9-26.8 11.1 -8.7 2.3-18.4 4-29.3 5.1 9.9 8.6 14.8 22.1 14.8 40.5v60.2c0 3.4 1.2 6.3 3.6 8.6 2.4 2.3 6.1 3 11.3 2 44.2-14.7 80.2-41.1 108.1-79.2 27.9-38.2 41.8-81.1 41.8-128.9C438.5 184.9 428.7 148.2 409.1 114.6z"
-                  ></path>
-                </svg>
-              </svg>
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/rohit-t-80874120b/"
-              class="footer__links-link"
-              ><svg width="23" height="23">
-                <use xlink:href="icons.svg#linkedin?" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="linkedin"
-                  viewBox="0 0 100 100"
-                  xml:space="preserve"
-                >
-                  <path
-                    d="M95 59.7V93H75.7V62c0-7.8-2.8-13.1-9.8-13.1 -5.3 0-8.5 3.6-9.9 7.1 -0.5 1.2-0.6 3-0.6 4.7V93H36.1c0 0 0.3-52.6 0-58h19.3v8.2c0 0.1-0.1 0.1-0.1 0.2h0.1v-0.2c2.6-3.9 7.1-9.6 17.4-9.6C85.5 33.6 95 41.9 95 59.7zM15.9 7C9.3 7 5 11.3 5 17c0 5.6 4.2 10 10.7 10h0.1c6.7 0 10.9-4.5 10.9-10C26.6 11.3 22.5 7 15.9 7zM6.1 93h19.3V35H6.1V93z"
-                  ></path>
-                </svg>
-              </svg>
-            </a>
-            <a
-              target="_blank"
-              href="https://twitter.com/Sai_Rohith_T"
-              class="footer__links-link"
-              ><svg width="23" height="23">
-                <use xlink:href="icons.svg#twitter?" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-                  />
-                </svg>
-              </svg>
-            </a>
-            <a
-              target="_blank"
-              href="https://rohithcodes.medium.com/"
-              class="footer__links-link"
-              ><svg width="23" height="23">
-                <use xlink:href="icons.svg#Medium?" />
-                <svg
-                  width="24"
-                  height="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                >
-                  <path
-                    d="M19 24h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5v14c0 2.761-2.237 4.999-5 5zm.97-5.649v-.269l-1.247-1.224c-.11-.084-.165-.222-.142-.359v-8.998c-.023-.137.032-.275.142-.359l1.277-1.224v-.269h-4.422l-3.152 7.863-3.586-7.863h-4.638v.269l1.494 1.799c.146.133.221.327.201.523v7.072c.044.255-.037.516-.216.702l-1.681 2.038v.269h4.766v-.269l-1.681-2.038c-.181-.186-.266-.445-.232-.702v-6.116l4.183 9.125h.486l3.593-9.125v7.273c0 .194 0 .232-.127.359l-1.292 1.254v.269h6.274z"
-                  />
-                </svg>
-              </svg>
-            </a>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/thisissairohith/"
-              class="footer__links-link"
-              ><svg width="23" height="23">
-                <use xlink:href="icons.svg#Instagram?" />
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill-rule="evenodd"
-                  clip-rule="evenodd"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              </svg>
-            </a>  
-          </div>
+<div id="cursor"></div>
+<div id="cursor-follower"></div>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">srt<span>.</span>dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="border__top"></div>
+  <div class="border__bottom"></div>
+  <div class="border__left"></div>
+  <div class="border__right"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">// Engineering Intelligence at Scale</div>
+    <h1 class="hero-name">Sai Rohith<br><span class="line2">Tanuku</span></h1>
+    <div class="hero-typed-wrap"><span id="typed-text"></span><span class="typed-cursor"></span></div>
+    <p class="hero-desc">AI Engineer with MS in Computer and Information Sciences. Building intelligent systems that reduce workload by 30%, accelerate pipelines by 40%, and scale to millions of events daily.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      <a href="mailto:tanukusai.sai52@gmail.com" class="btn btn-outline">Say Hello</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">scroll</span>
+  </div>
+</section>
+<section id="about">
+  <div class="section-label reveal">01 // about</div>
+  <div class="about-grid">
+    <div class="about-text reveal-left">
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Building the<br><span class="outline">Intelligence</span><br>layer.</h2>
+      <div class="section-divider"></div>
+      <p>I'm <strong>Sai Rohith Tanuku</strong>, an AI Engineer who bridges the gap between cutting-edge research and production-grade systems. My work lives at the intersection of machine learning, distributed systems, and thoughtful software engineering.</p>
+      <p>Currently pursuing my <strong>MS in Computer and Information Sciences at the University of Pittsburgh</strong> (GPA: 3.957/4.0), I've shipped AI-driven pipelines that reduced manual workloads by 30%, built microservices handling 10K+ events/day, and fine-tuned large language models for domain-specific tasks.</p>
+      <p>When I'm not engineering models, I'm building tools that other engineers will love — from Rust-based editor extensions to neural network frameworks from scratch.</p>
+      <div class="about-edu">
+        <div class="edu-item reveal" style="transition-delay:0.1s">
+          <div class="edu-school">University of Pittsburgh</div>
+          <div class="edu-degree">MS, Computer and Information Sciences</div>
+          <div class="edu-meta">Aug 2023 – Apr 2025 &nbsp;&middot;&nbsp; <span class="gpa">GPA: 3.957 / 4.00</span></div>
+          <div class="edu-meta" style="margin-top:0.3rem;color:var(--gray-600);">Algorithms &middot; ML &middot; Neural Networks &middot; Cloud Computing &middot; Data Structures</div>
         </div>
-        <div id="copyright">
-           <h10>Copyright &copy; 2022 Sai Rohith T.<br>All rights reserved.</h10>
-   </div>
-                    
-      </footer>
-    </main>
-    <script src="/js/bundle.js"></script>
-    <script src="bundle.js" type="text/javascript"></script>
-    
-  </body>
+        <div class="edu-item reveal" style="transition-delay:0.2s">
+          <div class="edu-school">Manipal Academy of Higher Education</div>
+          <div class="edu-degree">BS, Computer Science &amp; Communication Engineering</div>
+          <div class="edu-meta">Aug 2019 – May 2023</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="counters-grid" id="counters">
+        <div class="counter-card">
+          <div class="counter-num"><span class="count-num" data-target="30">0</span><span class="counter-suffix">%</span></div>
+          <div class="counter-label">Workload Reduced via AI-Driven Pipelines</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num"><span class="count-num" data-target="40">0</span><span class="counter-suffix">%</span></div>
+          <div class="counter-label">Faster Processing Time</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num"><span class="count-num" data-target="10">0</span><span class="counter-suffix">K+</span></div>
+          <div class="counter-label">Events Processed Daily</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num"><span class="count-num" data-target="3957" data-decimal="1">0</span></div>
+          <div class="counter-label">GPA &mdash; Top of Cohort</div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay:0.4s;margin-top:2rem;padding:1.5rem;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);">
+        <div class="section-label" style="margin-bottom:0.75rem;font-size:0.65rem;">Currently at</div>
+        <div style="font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:0.25rem;">ChiEAC</div>
+        <div style="font-size:0.82rem;color:var(--accent);margin-bottom:0.75rem;letter-spacing:0.06em;">Software Engineer &middot; Mar 2025 – Present</div>
+        <div style="font-size:0.82rem;color:var(--gray-400);line-height:1.5;">Building backend infrastructure with CI/CD pipelines, REST APIs, and real-time Prometheus + Grafana observability stacks on Linux servers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="experience">
+  <div class="section-label reveal">02 // experience</div>
+  <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Where I've <span class="outline">Shipped</span></h2>
+  <div class="section-divider reveal"></div>
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Mar 2025 – Present</div>
+      <div class="timeline-company">ChiEAC</div>
+      <div class="timeline-role">Software Engineer</div>
+      <ul class="timeline-bullets">
+        <li>Engineered backend infrastructure with CI/CD pipelines for automated builds, security checks, and zero-downtime deployments</li>
+        <li>Built REST APIs accelerating cross-team integration and cutting manual workflows by 50%</li>
+        <li>Enhanced system monitoring with Prometheus and Grafana observability stack on Linux servers for real-time model-inference performance tracking</li>
+      </ul>
+    </div>
+    <div class="timeline-item reveal" style="transition-delay:0.12s">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jan 2023 – May 2023</div>
+      <div class="timeline-company">EAIESB Enterprise Solutions</div>
+      <div class="timeline-role">Software Engineer</div>
+      <ul class="timeline-bullets">
+        <li>Engineered microservices-based system processing 10,000+ events daily with ML tasks — clustering, regression, classification</li>
+        <li>Developed FastAPI microservices for ML pipelines including dataset upload (&gt;10GB), model training, and real-time inference; cut processing time by 40%</li>
+        <li>Incorporated anomaly detection reducing error rates by 30%</li>
+      </ul>
+    </div>
+    <div class="timeline-item reveal" style="transition-delay:0.24s">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jun 2022 – Aug 2022</div>
+      <div class="timeline-company">Larsen &amp; Toubro</div>
+      <div class="timeline-role">AI Research Intern</div>
+      <ul class="timeline-bullets">
+        <li>Built AI/ML pipelines and refined models (YOLO, RetinaNet, EfficientDet) using TensorFlow and PyTorch</li>
+        <li>Automated data ingestion from REST APIs and GIS sources</li>
+        <li>Utilized NLP for preprocessing, improving object detection accuracy by 10%</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="section-label reveal">03 // skills</div>
+  <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Tech <span class="outline">Arsenal</span></h2>
+  <div class="section-divider reveal"></div>
+  <div class="skills-grid">
+    <div class="skill-category reveal-scale" style="transition-delay:0s">
+      <div class="skill-cat-label">AI / ML</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">LLMs</span><span class="skill-tag">NLP</span><span class="skill-tag">Deep Learning</span>
+        <span class="skill-tag">RAG</span><span class="skill-tag">LoRA / PEFT</span><span class="skill-tag">HuggingFace</span>
+        <span class="skill-tag">YOLO</span><span class="skill-tag">EfficientDet</span><span class="skill-tag">Anomaly Detection</span>
+      </div>
+    </div>
+    <div class="skill-category reveal-scale" style="transition-delay:0.08s">
+      <div class="skill-cat-label">Backend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Node.js</span>
+        <span class="skill-tag">NestJS</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Java</span>
+        <span class="skill-tag">REST APIs</span><span class="skill-tag">Microservices</span><span class="skill-tag">GraphQL</span>
+      </div>
+    </div>
+    <div class="skill-category reveal-scale" style="transition-delay:0.16s">
+      <div class="skill-cat-label">Cloud &amp; DevOps</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS</span><span class="skill-tag">GCP</span><span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Prometheus</span>
+        <span class="skill-tag">Grafana</span><span class="skill-tag">Linux</span>
+      </div>
+    </div>
+    <div class="skill-category reveal-scale" style="transition-delay:0.24s">
+      <div class="skill-cat-label">Data</div>
+      <div class="skill-tags">
+        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Cassandra</span>
+        <span class="skill-tag">Apache Spark</span><span class="skill-tag">Pinecone</span><span class="skill-tag">DVC</span>
+        <span class="skill-tag">MLflow</span>
+      </div>
+    </div>
+    <div class="skill-category reveal-scale" style="transition-delay:0.32s">
+      <div class="skill-cat-label">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">TypeScript</span><span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Java</span><span class="skill-tag">Kotlin</span><span class="skill-tag">C / C++</span>
+        <span class="skill-tag">SQL</span><span class="skill-tag">Rust</span><span class="skill-tag">Shell</span><span class="skill-tag">Solidity</span>
+      </div>
+    </div>
+    <div class="skill-category reveal-scale" style="transition-delay:0.4s">
+      <div class="skill-cat-label">Tools &amp; Frameworks</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Prisma</span><span class="skill-tag">Stripe</span><span class="skill-tag">JWT</span>
+        <span class="skill-tag">Twilio</span><span class="skill-tag">Streamlit</span><span class="skill-tag">OpenAI API</span>
+        <span class="skill-tag">Ethereum</span><span class="skill-tag">MapReduce</span><span class="skill-tag">Zed Extension API</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects">
+  <div class="section-label reveal">04 // projects</div>
+  <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Selected <span class="outline">Work</span></h2>
+  <div class="section-divider reveal"></div>
+  <div class="projects-grid">
+    <div class="project-card reveal" style="transition-delay:0s">
+      <div class="project-header"><div class="project-header-bg grad-1"></div><span class="project-num">01 / LLM Fine-Tuning</span></div>
+      <div class="project-body">
+        <div class="project-title">Fine-Tuning LLaMA &amp; DeepSeek for SQL Generation</div>
+        <div class="project-desc">Fine-tuned LLaMA-7B and DeepSeek-Coder on 120K+ NL-to-SQL pairs, improving SQL correctness by 30%. Scalable training workflows supporting custom SQL dialects across finance, e-commerce, and healthcare.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">PyTorch</span><span class="stack-tag">LLaMA</span>
+          <span class="stack-tag">DeepSeek</span><span class="stack-tag">LoRA/PEFT</span><span class="stack-tag">HuggingFace</span>
+        </div>
+        <a href="https://github.com/rohith1125/llama-sql" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay:0.08s">
+      <div class="project-header"><div class="project-header-bg grad-2"></div><span class="project-num">02 / Full-Stack</span></div>
+      <div class="project-body">
+        <div class="project-title">VillaVista — Villa Rental Platform</div>
+        <div class="project-desc">Full-stack rental platform with NestJS + TypeScript + PostgreSQL serving 10,000+ users at 99.9% uptime. Dual payment processing via Stripe + Razorpay, 5,000+ transactions, JWT auth, and role-based access control.</div>
+        <div class="project-stack">
+          <span class="stack-tag">NestJS</span><span class="stack-tag">TypeScript</span><span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Prisma</span><span class="stack-tag">Stripe</span><span class="stack-tag">Docker</span><span class="stack-tag">AWS</span>
+        </div>
+        <a href="https://github.com/rohith1125/villa" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay:0.16s">
+      <div class="project-header"><div class="project-header-bg grad-3"></div><span class="project-num">03 / Blockchain</span></div>
+      <div class="project-body">
+        <div class="project-title">Blockchain Data Integrity System</div>
+        <div class="project-desc">Fault-tolerant system using Ethereum, Cassandra, and Merkle Trees detecting 97% tampering across 1.2B+ records. Achieves 4x performance over baseline with distributed MapReduce processing.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Ethereum</span><span class="stack-tag">Solidity</span><span class="stack-tag">Cassandra</span>
+          <span class="stack-tag">MapReduce</span><span class="stack-tag">Python</span>
+        </div>
+        <a href="https://github.com/rohith1125" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay:0.24s">
+      <div class="project-header"><div class="project-header-bg grad-4"></div><span class="project-num">04 / AI / RAG</span></div>
+      <div class="project-body">
+        <div class="project-title">AI Education Assistant (CPS Parent Guide)</div>
+        <div class="project-desc">RAG pipeline using OpenAI + Pinecone vector DB helping Chicago Public Schools parents find answers about enrollment, programs, and policies in natural language — no more navigating bureaucratic portals.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">OpenAI API</span><span class="stack-tag">Pinecone</span>
+          <span class="stack-tag">Streamlit</span><span class="stack-tag">RAG</span>
+        </div>
+        <a href="https://github.com/rohith1125/cps-parent-guide" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay:0.32s">
+      <div class="project-header"><div class="project-header-bg grad-5"></div><span class="project-num">05 / Rust / Tooling</span></div>
+      <div class="project-body">
+        <div class="project-title">ML Toolkit for Zed Editor</div>
+        <div class="project-desc">Rust-based Zed editor extension providing TF/PyTorch code completion, live ML diagnostics, LSP-style hover docs, gradient/memory issue detection, and framework conversion utilities.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Rust</span><span class="stack-tag">Zed Extension API</span>
+          <span class="stack-tag">TensorFlow</span><span class="stack-tag">PyTorch</span><span class="stack-tag">LSP</span>
+        </div>
+        <a href="https://github.com/rohith1125/ml-toolkit-for-zed" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+    <div class="project-card reveal" style="transition-delay:0.4s">
+      <div class="project-header"><div class="project-header-bg grad-6"></div><span class="project-num">06 / From Scratch</span></div>
+      <div class="project-body">
+        <div class="project-title">MyTorch &mdash; Neural Net Framework from Scratch</div>
+        <div class="project-desc">From-scratch neural network library implementing autograd, backpropagation, and optimizers with zero ML framework dependencies. Demonstrates deep mastery of computational graphs and the chain rule.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span><span class="stack-tag">NumPy</span>
+          <span class="stack-tag">Autograd</span><span class="stack-tag">Backprop</span>
+        </div>
+        <a href="https://github.com/rohith1125/MyTorch" target="_blank" rel="noopener" class="project-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="section-label reveal">05 // contact</div>
+  <div class="contact-inner">
+    <h2 class="contact-tagline reveal">Let's build something<br><span class="outline">remarkable</span> together.</h2>
+    <p class="contact-sub reveal" style="transition-delay:0.1s">Open to AI/ML engineering roles, research collaborations, and interesting problems. Drop a line — I read every message.</p>
+    <div class="contact-links reveal" style="transition-delay:0.2s">
+      <a href="mailto:tanukusai.sai52@gmail.com" class="contact-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>tanukusai.sai52@gmail.com
+      </a>
+      <a href="tel:+14125898024" class="contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42a2 2 0 0 1 1.99-2.18H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l1.76-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+1-412-589-8024
+      </a>
+      <a href="https://linkedin.com/in/thisissairohith" target="_blank" rel="noopener" class="contact-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>linkedin.com/in/thisissairohith
+      </a>
+      <a href="https://github.com/rohith1125" target="_blank" rel="noopener" class="contact-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.57v-2c-3.34.73-4.03-1.61-4.03-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 6.8c1.02.005 2.04.138 3-.4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.69.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>github.com/rohith1125
+      </a>
+    </div>
+    <div class="reveal" style="transition-delay:0.3s">
+      <a href="mailto:tanukusai.sai52@gmail.com" class="btn btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Say Hello &rarr;</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-left"><span>Sai Rohith Tanuku</span> &middot; AI Engineer &middot; Pittsburgh, PA</div>
+  <div class="footer-hint">Press <kbd>`</kbd> for terminal easter egg</div>
+  <div class="footer-right"><a href="https://github.com/rohith1125" target="_blank" rel="noopener">github.com/rohith1125</a> &middot; Built with vanilla JS</div>
+</footer>
+<div id="terminal">
+  <div class="terminal-window">
+    <div class="terminal-bar">
+      <div class="terminal-dots">
+        <div class="terminal-dot t-red"></div>
+        <div class="terminal-dot t-yellow"></div>
+        <div class="terminal-dot t-green"></div>
+      </div>
+      <div class="terminal-title">srt@portfolio ~ bash</div>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="t-line t-dim">Last login: Mon Mar 16 2026 — srt-portfolio v2.0</div>
+      <div class="t-line">&nbsp;</div>
+      <div class="t-line t-success">Welcome to Sai Rohith's terminal.</div>
+      <div class="t-line t-dim">Type <span style="color:#fff">help</span> to see available commands.</div>
+      <div class="t-line">&nbsp;</div>
+    </div>
+    <div class="terminal-input-row">
+      <span class="terminal-prompt-label">srt@portfolio:~$&nbsp;</span>
+      <input type="text" id="terminal-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="type a command...">
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var cursor=document.getElementById('cursor'),follower=document.getElementById('cursor-follower'),fx=0,fy=0,mx=0,my=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  function af(){fx+=(mx-fx)*0.12;fy+=(my-fy)*0.12;follower.style.left=fx+'px';follower.style.top=fy+'px';requestAnimationFrame(af);}
+  af();
+})();
+(function(){
+  var canvas=document.getElementById('hero-canvas'),ctx=canvas.getContext('2d'),W,H,particles=[],COUNT=window.innerWidth<768?50:100,MAX=130;
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;}
+  function Particle(){
+    this.reset=function(){this.x=Math.random()*W;this.y=Math.random()*H;this.vx=(Math.random()-0.5)*0.4;this.vy=(Math.random()-0.5)*0.4;this.r=Math.random()*1.5+0.5;this.a=Math.random()*0.5+0.1;};
+    this.reset();
+    this.update=function(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>W)this.vx*=-1;if(this.y<0||this.y>H)this.vy*=-1;};
+    this.draw=function(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba(255,255,255,'+this.a+')';ctx.fill();};
+  }
+  function init(){particles=[];for(var i=0;i<COUNT;i++)particles.push(new Particle());}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<particles.length;i++){
+      particles[i].update();particles[i].draw();
+      for(var j=i+1;j<particles.length;j++){
+        var dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<MAX){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(255,255,255,'+(0.06*(1-d/MAX))+')';ctx.lineWidth=0.5;ctx.stroke();}
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();init();draw();
+  window.addEventListener('resize',function(){resize();init();});
+})();
+(function(){
+  var el=document.getElementById('typed-text'),phrases=['AI Engineer','ML Systems Builder','Backend Architect','Open Source Contributor','LLM Fine-Tuner'],pi=0,ci=0,deleting=false;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=phrases[0];return;}
+  function tick(){
+    var phrase=phrases[pi];
+    if(!deleting){el.textContent=phrase.slice(0,ci+1);ci++;if(ci===phrase.length){deleting=true;setTimeout(tick,1800);return;}}
+    else{el.textContent=phrase.slice(0,ci-1);ci--;if(ci===0){deleting=false;pi=(pi+1)%phrases.length;setTimeout(tick,400);return;}}
+    setTimeout(tick,deleting?55:80);
+  }
+  setTimeout(tick,1400);
+})();
+(function(){
+  var nav=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+})();
+(function(){
+  var btn=document.getElementById('hamburger'),menu=document.getElementById('mobile-menu');
+  btn.addEventListener('click',function(){btn.classList.toggle('open');menu.classList.toggle('open');document.body.style.overflow=menu.classList.contains('open')?'hidden':'';});
+  document.querySelectorAll('.mobile-link').forEach(function(l){l.addEventListener('click',function(){btn.classList.remove('open');menu.classList.remove('open');document.body.style.overflow='';});});
+})();
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){el.classList.add('visible');});return;}
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.12});
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){obs.observe(el);});
+})();
+(function(){
+  var counters=document.querySelectorAll('.count-num'),started=false;
+  function startCounters(){
+    if(started)return;started=true;
+    counters.forEach(function(el){
+      var target=parseInt(el.dataset.target,10),isDecimal=el.dataset.decimal,duration=1600,start=performance.now();
+      function update(now){
+        var elapsed=now-start,progress=Math.min(elapsed/duration,1),ease=1-Math.pow(1-progress,3),val=Math.round(ease*target);
+        if(isDecimal){var s=String(val).padStart(4,'0');el.textContent=s[0]+'.'+s.slice(1);}
+        else{el.textContent=val;}
+        if(progress<1)requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    });
+  }
+  var obs=new IntersectionObserver(function(entries){if(entries[0].isIntersecting){startCounters();obs.disconnect();}},{threshold:0.3});
+  obs.observe(document.getElementById('about'));
+})();
+(function(){
+  var overlay=document.getElementById('terminal'),body=document.getElementById('terminal-body'),input=document.getElementById('terminal-input'),history=[],histIdx=-1;
+  var cmds={
+    help:function(){return[{c:'t-info',t:'Available commands:'},{c:'t-dim',t:'  whoami     — About Sai Rohith'},{c:'t-dim',t:'  skills     — List tech stack'},{c:'t-dim',t:'  projects   — List projects'},{c:'t-dim',t:'  education  — Academic background'},{c:'t-dim',t:'  experience — Work history'},{c:'t-dim',t:'  contact    — Get in touch'},{c:'t-dim',t:'  github     — Open GitHub profile'},{c:'t-dim',t:'  clear      — Clear terminal'},{c:'t-dim',t:'  exit       — Close terminal'}];},
+    whoami:function(){return[{c:'t-white',t:'Sai Rohith Tanuku'},{c:'t-dim',t:'AI Engineer | MS Computer and Information Sciences'},{c:'t-dim',t:'University of Pittsburgh — GPA: 3.957 / 4.00'},{c:'t-dim',t:'Location: Pittsburgh, PA | United States'},{c:'t-dim',t:'Specializing in LLMs, MLOps, distributed systems.'}];},
+    skills:function(){return[{c:'t-info',t:'AI/ML:   PyTorch · TensorFlow · LLMs · RAG · NLP · YOLO · EfficientDet'},{c:'t-info',t:'Backend: Python · FastAPI · NestJS · TypeScript · Node.js · Java'},{c:'t-info',t:'Cloud:   AWS · GCP · Docker · Kubernetes · CI/CD · Prometheus · Grafana'},{c:'t-info',t:'Data:    PostgreSQL · Cassandra · Spark · Pinecone · DVC · MLflow'},{c:'t-info',t:'Lang:    Python · Rust · TypeScript · Java · C++ · SQL · Shell · Solidity'}];},
+    projects:function(){return[{c:'t-success',t:'[1] Fine-Tuning LLaMA & DeepSeek — SQL Generation (120K+ NL-to-SQL pairs)'},{c:'t-success',t:'[2] VillaVista — Rental Platform (10K+ users, 99.9% uptime, Stripe/Razorpay)'},{c:'t-success',t:'[3] Blockchain Data Integrity — 1.2B+ records, 97% tamper detection'},{c:'t-success',t:'[4] CPS Parent Guide — RAG pipeline (OpenAI + Pinecone vector DB)'},{c:'t-success',t:'[5] ML Toolkit for Zed — Rust extension with live ML diagnostics'},{c:'t-success',t:'[6] MyTorch — Neural net framework from scratch (NumPy only)'}];},
+    education:function(){return[{c:'t-white',t:'University of Pittsburgh'},{c:'t-dim',t:'  MS Computer and Information Sciences'},{c:'t-dim',t:'  Aug 2023 – Apr 2025 | GPA: 3.957 / 4.00'},{c:'',t:''},{c:'t-white',t:'Manipal Academy of Higher Education'},{c:'t-dim',t:'  BS Computer Science & Communication Engineering'},{c:'t-dim',t:'  Aug 2019 – May 2023'}];},
+    experience:function(){return[{c:'t-white',t:'ChiEAC — Software Engineer (Mar 2025 – Present)'},{c:'t-dim',t:'  CI/CD pipelines, REST APIs, Prometheus + Grafana observability'},{c:'',t:''},{c:'t-white',t:'EAIESB — Software Engineer (Jan 2023 – May 2023)'},{c:'t-dim',t:'  10K+ events/day, FastAPI ML pipelines, 40% faster processing'},{c:'',t:''},{c:'t-white',t:'Larsen & Toubro — AI Research Intern (Jun 2022 – Aug 2022)'},{c:'t-dim',t:'  YOLO/RetinaNet/EfficientDet, NLP preprocessing, +10% accuracy'}];},
+    contact:function(){return[{c:'t-info',t:'Email:    tanukusai.sai52@gmail.com'},{c:'t-info',t:'Phone:    +1-412-589-8024'},{c:'t-info',t:'LinkedIn: linkedin.com/in/thisissairohith'},{c:'t-info',t:'GitHub:   github.com/rohith1125'}];},
+    github:function(){window.open('https://github.com/rohith1125','_blank','noopener');return[{c:'t-success',t:'Opening github.com/rohith1125 ...'}];},
+    clear:function(){body.innerHTML='';return[];},
+    exit:function(){overlay.classList.remove('open');document.body.style.overflow='';return[];}
+  };
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function addLines(lines){lines.forEach(function(l){var d=document.createElement('div');d.className='t-line '+(l.c||'');d.textContent=l.t||'';body.appendChild(d);});body.scrollTop=body.scrollHeight;}
+  function run(cmd){
+    var trimmed=cmd.trim().toLowerCase();
+    var echo=document.createElement('div');echo.className='t-line';echo.innerHTML='<span class="t-prompt">srt@portfolio:~$ </span>'+esc(cmd);body.appendChild(echo);
+    if(!trimmed){body.scrollTop=body.scrollHeight;return;}
+    history.unshift(trimmed);histIdx=-1;
+    if(cmds[trimmed]){var result=cmds[trimmed]();if(result&&result.length)addLines(result);}
+    else{addLines([{c:'t-error',t:"bash: "+trimmed+": command not found. Type 'help'."}]);}
+    var blank=document.createElement('div');blank.className='t-line';blank.textContent='';body.appendChild(blank);
+    body.scrollTop=body.scrollHeight;
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='`'){
+      if(!overlay.classList.contains('open')){overlay.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){input.focus();},50);e.preventDefault();}
+    }
+    if(e.key==='Escape'&&overlay.classList.contains('open')){overlay.classList.remove('open');document.body.style.overflow='';}
+  });
+  overlay.addEventListener('click',function(e){if(e.target===overlay){overlay.classList.remove('open');document.body.style.overflow='';}});
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){var v=input.value;input.value='';run(v);}
+    if(e.key==='ArrowUp'){e.preventDefault();if(histIdx<history.length-1)histIdx++;input.value=history[histIdx]||'';}
+    if(e.key==='ArrowDown'){e.preventDefault();if(histIdx>0)histIdx--;else{histIdx=-1;input.value='';return;}input.value=history[histIdx]||'';}
+    if(e.key==='Tab'){e.preventDefault();var partial=input.value.trim(),match=Object.keys(cmds).find(function(k){return k.startsWith(partial);});if(match)input.value=match;}
+  });
+})();
+</script>
+</body>
 </html>

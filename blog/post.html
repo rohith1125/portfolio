@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Post — Sai Rohith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000;--bg2:#1c1c1e;--bg3:#2c2c2e;--bg4:#3a3a3c;
+  --txt:#f5f5f7;--txt2:#a1a1a6;--accent:#0a84ff;--purple:#bf5af2;--green:#30d158;
+  --grad:linear-gradient(135deg,#0a84ff,#bf5af2);
+  --glass:rgba(28,28,30,0.72);
+  --font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--font);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* PROGRESS BAR */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--grad);width:0%;z-index:200;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* NAV */
+nav{position:fixed;top:3px;left:0;right:0;z-index:100;padding:0 2rem;height:57px;display:flex;align-items:center;justify-content:space-between;background:rgba(0,0,0,0.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-logo{font-size:1.05rem;font-weight:600;color:var(--txt);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{color:var(--txt2);text-decoration:none;font-size:0.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--txt)}
+.nav-links a.active{color:var(--accent)}
+.nav-links a.btn-write{background:var(--accent);color:#fff;padding:0.42rem 1.1rem;border-radius:20px;font-size:0.85rem;transition:opacity .2s}
+.nav-links a.btn-write:hover{opacity:0.85}
+
+/* LAYOUT */
+.container{max-width:720px;margin:0 auto;padding:100px 2rem 5rem}
+
+/* BACK */
+.back-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--txt2);text-decoration:none;font-size:0.88rem;font-weight:500;margin-bottom:2.5rem;transition:color .2s}
+.back-link:hover{color:var(--accent)}
+
+/* POST HEADER */
+.post-header{margin-bottom:3rem}
+.post-badge{display:inline-block;padding:0.3rem 0.8rem;border-radius:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1.2rem}
+.badge-aiml{background:rgba(191,90,242,0.18);color:var(--purple)}
+.badge-systems{background:rgba(48,209,88,0.14);color:var(--green)}
+.badge-engineering{background:rgba(10,132,255,0.16);color:var(--accent)}
+.badge-career{background:rgba(255,159,10,0.16);color:#ff9f0a}
+.post-header h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.03em;line-height:1.25;margin-bottom:1rem}
+.post-meta{display:flex;align-items:center;gap:1.2rem;color:var(--txt2);font-size:0.88rem}
+.post-meta span{display:flex;align-items:center;gap:0.35rem}
+.post-meta .divider{width:4px;height:4px;border-radius:50%;background:var(--bg4)}
+
+/* ARTICLE BODY */
+.article-body{font-size:1.03rem;line-height:1.82;color:var(--txt)}
+.article-body h2{font-size:1.35rem;font-weight:600;letter-spacing:-0.02em;color:var(--txt);margin:2.2rem 0 0.9rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.article-body p{margin-bottom:1.3rem;color:#e0e0e2}
+.article-body strong{color:var(--txt);font-weight:600}
+.article-body code{font-family:var(--mono);font-size:0.88em;background:var(--bg3);padding:0.18em 0.45em;border-radius:5px;color:var(--purple)}
+.article-body pre{background:var(--bg2);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1.2rem 1.4rem;margin:1.5rem 0;overflow-x:auto}
+.article-body pre code{background:none;padding:0;color:var(--green);font-size:0.87rem;line-height:1.7}
+.article-body ul,.article-body ol{margin:0.5rem 0 1.3rem 1.6rem}
+.article-body li{margin-bottom:0.45rem;color:#e0e0e2}
+
+/* SHARE */
+.share-section{margin-top:3.5rem;padding:1.6rem;background:var(--bg2);border:1px solid rgba(255,255,255,0.06);border-radius:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.share-section p{font-size:0.95rem;color:var(--txt2)}
+.share-section strong{color:var(--txt);font-weight:600}
+#copyBtn{padding:0.55rem 1.4rem;background:var(--accent);color:#fff;border:none;border-radius:10px;font-family:var(--font);font-size:0.88rem;font-weight:500;cursor:pointer;transition:opacity .2s}
+#copyBtn:hover{opacity:0.85}
+#copyBtn.copied{background:var(--green)}
+
+/* RELATED */
+.related-section{margin-top:3.5rem}
+.related-section h3{font-size:1.1rem;font-weight:600;margin-bottom:1.4rem;color:var(--txt2)}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:540px){.related-grid{grid-template-columns:1fr}}
+.related-card{background:var(--bg2);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:1.2rem;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;gap:0.5rem}
+.related-card:hover{border-color:rgba(10,132,255,0.3);transform:translateY(-2px)}
+.related-card .r-badge{font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em}
+.related-card h4{font-size:0.9rem;font-weight:600;line-height:1.4;color:var(--txt)}
+.related-card span{font-size:0.8rem;color:var(--txt2)}
+
+/* NOT FOUND */
+.not-found{text-align:center;padding:6rem 2rem;color:var(--txt2)}
+.not-found h2{font-size:1.5rem;margin-bottom:0.8rem;color:var(--txt)}
+.not-found a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav>
+  <a class="nav-logo" href="../index.html"><span>Sai Rohith</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Blog</a>
+    <a href="write.html" class="btn-write">Write</a>
+  </div>
+</nav>
+
+<div class="container" id="app">
+  <div style="color:var(--txt2);padding:4rem 0;text-align:center">Loading…</div>
+</div>
+
+<script>
+const POSTS = [
+  {
+    id: 'building-rag-2024',
+    title: 'Building Production RAG: Lessons from CHIE-AC',
+    cat: 'AI/ML',
+    date: '2024-11-15',
+    readTime: 8,
+    excerpt: 'What no one tells you about retrieval-augmented generation at scale — chunking strategies, reranking, and why your embeddings lie to you.',
+    content: `# Building Production RAG: Lessons from CHIE-AC
+
+## The Problem Nobody Warns You About
+
+When I built CHIE-AC — a healthcare document question-answering system — I assumed the hard part would be choosing the right LLM. I was wrong. The hard part was everything that happens before the model even sees your query.
+
+RAG sounds deceptively simple: chunk your documents, embed them, store in a vector DB, retrieve at query time, feed to LLM. In practice, every one of those steps is a landmine. Here's what I learned the painful way.
+
+## Chunking Is Not Trivial
+
+My first instinct was fixed-size chunking at 512 tokens with 50-token overlaps. Clean, simple, wrong. Healthcare documents have dense semantic structure — a discharge summary has medication lists, diagnoses, follow-up instructions, and narrative prose all interleaved. Fixed chunking shredded context across boundaries constantly.
+
+The fix: hierarchical chunking. I split first at the document section level (using regex to detect headers), then chunk within sections. Overlap windows were tuned per section type — narrative prose got 20% overlap, structured lists got near zero. Retrieval precision improved by 34% measured against a ground-truth eval set I built by hand.
+
+## Why Your Embeddings Lie to You
+
+Cosine similarity in embedding space does not equal semantic relevance. It equals proximity in the training distribution of your embedding model. For out-of-domain text — medical jargon, abbreviations, internal acronyms — the model has seen similar surface-level patterns but assigns misleading similarity scores.
+
+I caught this when queries about "CABG" (coronary artery bypass graft) were retrieving chunks about "graft rejection" in transplant contexts. The embedding model had no concept that clinical shorthand mapped to a specific procedure. The fix was a hybrid retrieval approach: BM25 sparse retrieval for keyword precision combined with dense vector retrieval, with Reciprocal Rank Fusion to merge result sets.
+
+## Reranking Changes Everything
+
+The biggest performance jump came from adding a cross-encoder reranker as a second retrieval stage. Initial retrieval pulls top-20 candidates using BM25 + vector hybrid. The reranker (a fine-tuned BERT variant) then scores each chunk against the full query, returning top-5. This is computationally heavier, but the latency hit is acceptable at roughly 80ms for a 20-chunk rerank operation.
+
+Reranking reduced hallucination rate from 12% to under 3% on my eval set, measured by checking whether cited document passages actually supported model answers.
+
+## Context Window Packing
+
+With a 4K context window (GPT-3.5 era constraints), fitting retrieved chunks plus system prompt plus answer headroom required careful token budgeting. I implemented a greedy packing algorithm: insert chunks in descending rerank score order until budget is hit, with mandatory insertion of the top-1 chunk regardless of budget pressure.
+
+## What I'd Do Differently
+
+Start with eval before building. I wasted weeks tuning systems without objective metrics. Build a 50–100 example evaluation set on day one. Measure chunking quality, retrieval recall, and answer faithfulness separately — they fail independently and require different fixes.
+
+RAG is not a feature; it's a pipeline. Every joint is a failure mode. Treat it accordingly.`
+  },
+  {
+    id: 'newtorch-autodiff',
+    title: 'Writing Autograd from Scratch in Python',
+    cat: 'Engineering',
+    date: '2024-09-20',
+    readTime: 12,
+    excerpt: 'How I built NewTorch — a NumPy-only neural network framework with reverse-mode automatic differentiation. The math, the code, the bugs.',
+    content: `# Writing Autograd from Scratch in Python
+
+## Why Build What Already Exists?
+
+PyTorch exists. TensorFlow exists. JAX exists. So why spend three weeks building NewTorch, a NumPy-only autograd framework? Because you don't truly understand automatic differentiation until you've implemented it, watched it produce NaN gradients, and traced back through six layers of your own abstraction to find the bug.
+
+This is the story of that process.
+
+## The Core Idea: Computation Graphs
+
+Everything in autograd hinges on one concept: the computation graph. Every operation you perform — addition, multiplication, matrix multiply, activation functions — creates a node in a directed acyclic graph. Leaf nodes are your inputs and parameters. Each non-leaf node knows its operation and its input nodes.
+
+In NewTorch, every value is a \`Tensor\` object. Each Tensor stores a NumPy array for forward values, a NumPy array for accumulated gradients, and a list of (parent_tensor, local_gradient_fn) tuples.
+
+\`\`\`
+class Tensor:
+    def __init__(self, data, _children=()):
+        self.data = np.array(data, dtype=np.float64)
+        self.grad = np.zeros_like(self.data)
+        self._backward = lambda: None
+        self._prev = set(_children)
+\`\`\`
+
+## Forward Pass: Just Math
+
+The forward pass is straightforward. When you write \`c = a * b\`, NewTorch creates a new Tensor whose data is \`a.data * b.data\`, and records that \`c\` came from \`a\` and \`b\` via multiplication. No magic yet.
+
+## Backward Pass: Chain Rule in Code
+
+The magic is in \`backward()\`. Starting from the output node (loss), we perform a topological sort of the graph to visit nodes in reverse dependency order. Then we walk backward, calling each node's \`_backward\` function to propagate gradients.
+
+For multiplication \`c = a * b\`, the local gradients are: \`∂c/∂a = b\` and \`∂c/∂b = a\`. Each node accumulates incoming gradients from all downstream nodes before computing its own backward pass — this is the "+=" accumulation pattern that handles nodes with multiple consumers.
+
+## The Bug That Cost Me Four Hours
+
+I implemented matrix multiplication and tested it on a tiny 2-layer network. The gradients looked plausible. Then I scaled to deeper networks and gradients exploded on odd-shaped weight matrices.
+
+The bug: I was transposing the wrong dimension during backward. For \`C = A @ B\`, the gradient w.r.t. \`A\` is \`grad_C @ B.T\` and w.r.t. \`B\` is \`A.T @ grad_C\`. I had the transpose axes wrong for batched operations, causing shape mismatches that NumPy was silently broadcasting into nonsense.
+
+Lesson: test gradients numerically. For every operation, I now verify against finite-difference approximation: \`(f(x+ε) - f(x-ε)) / 2ε\`. If your analytic gradient doesn't match within 1e-5, your backward is wrong.
+
+## Results
+
+NewTorch trains MNIST to 97.4% accuracy using a 3-layer MLP, matching PyTorch on equivalent architecture. Training is ~40x slower due to Python loop overhead versus PyTorch's C++ kernels — but correctness is the point, not speed.
+
+The code is ~600 lines. Reading it is the best autograd tutorial I know.`
+  },
+  {
+    id: 'ml-at-jpmc',
+    title: 'Production ML at Scale: Census Classification Lessons',
+    cat: 'AI/ML',
+    date: '2024-07-10',
+    readTime: 6,
+    excerpt: 'Deploying a dual-branch ML pipeline at a global bank taught me more about data quality and feature engineering than any course ever did.',
+    content: `# Production ML at Scale: Census Classification Lessons
+
+## The Reality Gap
+
+Academic ML teaches you to optimize F1 scores on clean, static datasets. Production ML at a global bank teaches you that your dataset is never clean, never static, and the humans who labeled it had different instructions depending on the quarter. The Census Bureau Occupation Classification project was my introduction to this reality.
+
+## The Problem
+
+The task: classify free-text occupation descriptions into standardized SOC (Standard Occupational Classification) codes. Simple enough in theory. In practice: 800,000 training examples with 12% inconsistent labels, 583 output classes with severe long-tail distribution, and a requirement to match or exceed human annotator agreement rates of 78%.
+
+## Dual-Branch Architecture
+
+Single-model approaches hit a ceiling around 72% accuracy. The breakthrough was a dual-branch architecture. Branch A used TF-IDF features with a gradient boosted classifier — excellent at surface-level pattern matching for common occupations where exact phrase matching dominates. Branch B used sentence embeddings (fine-tuned on occupational text) with a neural classifier — better at semantic generalization for rare or ambiguous descriptions.
+
+The branches were fused via a learned confidence-weighted ensemble. For each input, we computed each branch's softmax entropy as an uncertainty signal. When Branch A is highly confident (low entropy), its output dominates. When both branches are uncertain, we fall back to a rule-based system for the top 50 most common occupations.
+
+Final accuracy: 84.3% — 6.3 points above the human baseline.
+
+## Data Quality Was the Real Problem
+
+Forty percent of engineering time went to data quality, not modeling. Key issues we found:
+
+**Label drift**: Annotators in 2019 used updated SOC 2018 codes; records from 2015 used SOC 2010. The mapping tables between versions had 200+ changes including splits, merges, and reclassifications. Training a single model on mixed-vintage data introduced systematic errors.
+
+**Class imbalance at the tail**: The 50 most common codes had 95% of training examples. The bottom 300 codes had fewer than 50 examples each. Standard cross-entropy loss was useless here. Focal loss with per-class weighting improved tail accuracy by 18%.
+
+**Description quality variance**: Descriptions ranged from precise ("Senior software engineer, cloud infrastructure") to nearly useless ("works"). We trained a description quality scorer and routed low-quality inputs to a confidence-boosting pipeline that queried similar high-quality examples.
+
+## Monitoring in Production
+
+A model that performs well at deploy time can silently degrade. We instrumented three signals: prediction confidence distribution (drift means inputs are changing), per-class prediction rate (sudden spikes indicate labeling issues upstream), and monthly manual audit sample reviewed by domain experts.
+
+The most important production lesson: build your monitoring before you deploy. You cannot instrument a black box after the fact without significant rework.`
+  },
+  {
+    id: 'voice-ai-harmonypeak',
+    title: 'Real-Time Voice AI: Building HarmonySpeak',
+    cat: 'Systems',
+    date: '2024-05-05',
+    readTime: 7,
+    excerpt: 'Building a real-time speaker diarization system with MFCC pipelines, WebRTC, and too many audio buffer headaches.',
+    content: `# Real-Time Voice AI: Building HarmonySpeak
+
+## What Is Speaker Diarization?
+
+Diarization answers the question: "who spoke when?" Given an audio stream with multiple people talking, segment it into speaker-labeled intervals. It sounds like a solved problem until you try to do it in real-time over WebRTC with consumer microphones in noisy environments.
+
+HarmonySpeak was my attempt at a practical real-time diarization system. Here's what I learned about audio ML the hard way.
+
+## The Audio Pipeline
+
+Raw audio from the browser arrives as 16-bit PCM at 16kHz via WebRTC. Before any ML touches it, the signal needs preprocessing: noise gating to drop silence, normalization to handle mic level variance across users, and a pre-emphasis filter (high-pass) to boost high-frequency speech formants that carry speaker identity.
+
+Feature extraction converts audio frames into MFCC (Mel-Frequency Cepstral Coefficients) vectors. Each 25ms frame with 10ms hop produces a 40-dimensional vector. MFCCs are the right choice over raw spectrograms for speaker identity — they're compact, computationally cheap, and encode the spectral envelope that captures vocal tract characteristics.
+
+## The Buffering Problem
+
+This is where real-time systems get painful. Diarization requires context — you need multiple consecutive utterance segments to confidently assign a speaker identity. But users expect low latency. These goals are in direct tension.
+
+My solution was a dual-buffer architecture. A short buffer (200ms) runs a lightweight voice activity detection (VAD) model to detect speech/silence transitions. When a speech segment is detected, it's enqueued in a processing buffer. The diarization model operates on the processing buffer in a background thread, updating speaker labels asynchronously. The UI receives speaker label updates with roughly 400ms latency — imperceptible in conversation flow.
+
+## Speaker Enrollment and Online Clustering
+
+The system operates in two modes. Enrolled mode: known speakers have been pre-registered with 3–5 seconds of reference audio. Speaker embedding distance to enrolled profiles determines identity. Unknown mode: online clustering groups utterances by similarity, assigning anonymous labels (Speaker 1, Speaker 2) that resolve to identities when enrollment happens later.
+
+Online clustering used an agglomerative approach with cosine distance on d-vector speaker embeddings. The cluster linkage threshold was the most sensitive hyperparameter — too tight and one speaker gets split into multiple identities; too loose and multiple speakers merge into one. I ended up at 0.68 cosine distance, tuned on a held-out dataset of 2–4 person conversations.
+
+## Latency Budget
+
+End-to-end latency breakdown at target performance:
+- Audio capture + WebRTC: ~20ms
+- Preprocessing + MFCC: ~8ms
+- VAD inference: ~12ms
+- Diarization (async): ~180ms
+- Total perceived latency: ~40ms (VAD path), ~400ms (full diarization labels)
+
+The key insight: separate latency-sensitive paths (speech detection) from latency-tolerant paths (speaker identity). Users tolerate a short pause before seeing speaker labels; they do not tolerate choppy audio caused by blocking the audio thread.
+
+## What I'd Build Differently
+
+WebRTC noise suppression interferes with MFCC-based speaker recognition in ways I didn't anticipate — it partially normalizes the spectral characteristics that encode speaker identity. I'd run speaker recognition on the raw stream before suppression, piping suppressed audio only to the user-facing output.`
+  },
+  {
+    id: 'career-ai-engineer',
+    title: 'On Becoming an AI Engineer in 2024',
+    cat: 'Career',
+    date: '2024-03-01',
+    readTime: 5,
+    excerpt: 'The skills that actually matter, what surprised me about the field, and why systems thinking beats prompt engineering every time.',
+    content: `# On Becoming an AI Engineer in 2024
+
+## The Title Didn't Exist Three Years Ago
+
+"AI Engineer" wasn't a job category when I started studying computer science. The field crystallized fast — partly hype, partly genuine demand for people who could bridge the gap between ML research and production systems. I ended up in that gap, which turned out to be a good place to be.
+
+Here's what I've learned about what the role actually requires, versus what job postings say it requires.
+
+## What Matters (From Experience)
+
+**Systems thinking, not prompt engineering.** The engineers I've seen excel at this work think in pipelines and failure modes, not in clever prompts. Prompt engineering is a useful tactic; systems thinking is a durable skill. When something goes wrong in a production ML system — and it will — the ability to reason about which component failed and why is worth more than the ability to craft a perfect system prompt.
+
+**Software engineering fundamentals are non-negotiable.** I've interviewed at companies where "AI Engineer" roles were filled by people who couldn't write clean, testable code. They hit walls immediately when asked to productionize anything. The ML part is learnable. The software engineering discipline is harder to develop quickly.
+
+**Statistical intuition over framework fluency.** Knowing why a model is failing requires understanding distributions, variance, and bias in a deep way. Knowing how to call \`model.fit()\` is table stakes. I've found that time spent with probability theory and linear algebra pays compound returns — it makes everything else legible.
+
+## What Surprised Me
+
+The problems are mostly data problems. I expected to spend my time tuning models. Instead, I spent most of my time on data collection, cleaning, and labeling pipelines. The model is often the easy part. Getting high-quality, representative, consistently-labeled training data is the hard part, and it's underrepresented in most educational programs.
+
+Evaluation is undervalued and underbuilt. Most teams I've worked with or observed have much weaker evaluation infrastructure than they think they need. Without rigorous evals, you can't tell if a model change is an improvement or regression. Building eval sets is unglamorous work that pays off enormously.
+
+## Skills I'd Prioritize
+
+For anyone starting this path now: learn to build things end-to-end before specializing. Build a full RAG pipeline. Fine-tune a small model. Write a training loop from scratch. Build a serving API with proper logging and monitoring. The breadth matters early — it gives you the vocabulary to understand which specialization you actually want.
+
+The field rewards people who can ship, not just people who can explain how transformers work. Both matter, but shipping is rarer.`
+  }
+];
+
+function getLocalPosts() {
+  try { return JSON.parse(localStorage.getItem('published_posts') || '[]'); } catch { return []; }
+}
+const ALL_POSTS = [...POSTS, ...getLocalPosts()];
+
+function badgeClass(cat) {
+  const m = { 'AI/ML':'badge-aiml','Systems':'badge-systems','Engineering':'badge-engineering','Career':'badge-career' };
+  return m[cat] || 'badge-engineering';
+}
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+}
+
+// Simple markdown parser
+function parseMarkdown(md) {
+  const lines = md.split('\n');
+  let html = '';
+  let inPre = false;
+  let inUl = false;
+  let preBuffer = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    // Code block
+    if (line.startsWith('```')) {
+      if (!inPre) {
+        inPre = true;
+        preBuffer = '';
+      } else {
+        html += `<pre><code>${escHtml(preBuffer.trimEnd())}</code></pre>`;
+        inPre = false;
+        preBuffer = '';
+      }
+      continue;
+    }
+    if (inPre) { preBuffer += line + '\n'; continue; }
+
+    // Close list if needed
+    if (inUl && !line.startsWith('- ') && !line.startsWith('* ')) {
+      html += '</ul>';
+      inUl = false;
+    }
+
+    if (line.startsWith('# ')) {
+      // h1 — skip, used as title
+      continue;
+    } else if (line.startsWith('## ')) {
+      html += `<h2>${inlineFormat(line.slice(3))}</h2>`;
+    } else if (line.startsWith('- ') || line.startsWith('* ')) {
+      if (!inUl) { html += '<ul>'; inUl = true; }
+      html += `<li>${inlineFormat(line.slice(2))}</li>`;
+    } else if (line.trim() === '') {
+      // skip empty
+    } else {
+      html += `<p>${inlineFormat(line)}</p>`;
+    }
+  }
+  if (inUl) html += '</ul>';
+  return html;
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function inlineFormat(s) {
+  // bold
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // inline code
+  s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+  return s;
+}
+
+// Read progress bar
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrollTop = doc.scrollTop || document.body.scrollTop;
+  const scrollHeight = doc.scrollHeight - doc.clientHeight;
+  const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  document.getElementById('progress').style.width = pct + '%';
+});
+
+// Render post
+const params = new URLSearchParams(window.location.search);
+const postId = params.get('id');
+const post = ALL_POSTS.find(p => p.id === postId);
+const app = document.getElementById('app');
+
+if (!post) {
+  app.innerHTML = `
+    <div class="not-found">
+      <h2>Post not found</h2>
+      <p>That article doesn't exist. <a href="index.html">Back to writing →</a></p>
+    </div>`;
+} else {
+  document.title = `${post.title} — Sai Rohith`;
+
+  // Related posts: same category first, then any
+  const related = ALL_POSTS
+    .filter(p => p.id !== post.id)
+    .sort((a, b) => (b.cat === post.cat ? 1 : 0) - (a.cat === post.cat ? 1 : 0))
+    .slice(0, 2);
+
+  app.innerHTML = `
+    <a class="back-link" href="index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Back to Writing
+    </a>
+    <header class="post-header">
+      <span class="post-badge ${badgeClass(post.cat)}">${post.cat}</span>
+      <h1>${post.title}</h1>
+      <div class="post-meta">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          ${formatDate(post.date)}
+        </span>
+        <div class="divider"></div>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ${post.readTime} min read
+        </span>
+      </div>
+    </header>
+    <article class="article-body">${parseMarkdown(post.content)}</article>
+    <div class="share-section">
+      <div>
+        <strong>Found this useful?</strong>
+        <p>Share it with someone who'd appreciate it.</p>
+      </div>
+      <button id="copyBtn">Copy link</button>
+    </div>
+    <div class="related-section">
+      <h3>More articles</h3>
+      <div class="related-grid">
+        ${related.map(r => `
+          <a class="related-card" href="post.html?id=${r.id}">
+            <span class="r-badge ${badgeClass(r.cat)}" style="color:${r.cat==='AI/ML'?'var(--purple)':r.cat==='Systems'?'var(--green)':r.cat==='Career'?'#ff9f0a':'var(--accent)'}">${r.cat}</span>
+            <h4>${r.title}</h4>
+            <span>${r.readTime} min read</span>
+          </a>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('copyBtn').addEventListener('click', function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      this.textContent = 'Copied!';
+      this.classList.add('copied');
+      setTimeout(() => { this.textContent = 'Copy link'; this.classList.remove('copied'); }, 2000);
+    });
+  });
+}
+</script>
+</body>
+</html>

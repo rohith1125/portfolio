@@ -105,6 +105,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:60px;d
 .btn-xs.del:hover{background:rgba(255,69,58,0.12)}
 .empty-list{color:var(--txt2);font-size:0.85rem;font-style:italic}
 
+.theme-btn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#86868b;display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;transition:all .2s;flex-shrink:0;}
+.theme-btn:hover{background:rgba(255,255,255,.12);}
+html.light{--bg0:#f5f5f7;--bg1:#e8e8ed;--bg2:#d8d8df;--t1:#1d1d1f;--t2:#6e6e73;--border:rgba(0,0,0,0.1);}
+html.light body{background:var(--bg0);color:var(--t1);}
+html.light nav{background:rgba(245,245,247,0.82);border-bottom-color:rgba(0,0,0,.1);}
+html.light .nav-logo{color:var(--t1);}
+html.light .nav-back{color:var(--t2);}
+html.light .theme-btn{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.1);}
+html.light .gate-box{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.1);}
+html.light .gate-box h2{color:var(--t1);}
+html.light .gate-input{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.12);color:var(--t1);}
+html.light .gate-btn{background:var(--blue);}
+html.light .editor-main{border-right-color:rgba(0,0,0,.1);}
+html.light .input-title{color:var(--t1);}
+html.light .input-excerpt{color:var(--t2);}
+html.light .select-cat{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.12);color:var(--t1);}
+html.light .input-tags{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.12);color:var(--t1);}
+html.light .toolbar-btn{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.1);color:var(--t2);}
+html.light .toolbar-btn:hover{color:var(--t1);border-color:rgba(0,0,0,.2);}
+html.light .toolbar-btn.active{color:var(--blue);border-color:rgba(10,132,255,.3);background:rgba(10,132,255,.08);}
+html.light #content-area{color:#3a3a3c;}
+html.light #preview-area{color:#3a3a3c;}
+html.light #preview-area h2,html.light #preview-area h3{color:var(--t1);}
+html.light #preview-area code{background:rgba(0,0,0,.06);border-color:rgba(0,0,0,.1);color:#1d1d1f;}
+html.light #preview-area pre{background:#e0e0e8;border-color:rgba(0,0,0,.1);}
+html.light .editor-actions{border-top-color:rgba(0,0,0,.08);}
+html.light .btn-draft{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.12);color:var(--t2);}
+html.light .btn-draft:hover{color:var(--t1);}
+html.light .sidebar{background:var(--bg0);border-left-color:rgba(0,0,0,.1);}
+html.light .sidebar-section-title{color:var(--t3,#8e8e93);}
+html.light .draft-item{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.1);}
+html.light .draft-title{color:var(--t1);}
+html.light .draft-date{color:var(--t2);}
+html.light .slug-preview{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.1);color:var(--t2);}
+html.light .editor-stats{color:var(--t2);}
+html.light .autosave-label{color:var(--t2);}
+html.light .input-title::placeholder,html.light .input-excerpt::placeholder,html.light #content-area::placeholder{color:rgba(0,0,0,.2);}
+
 /* Footer */
 footer{padding:2rem;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
 footer a{color:var(--accent);font-size:0.88rem;text-decoration:none}
@@ -136,6 +174,7 @@ footer a{color:var(--accent);font-size:0.88rem;text-decoration:none}
       <a href="write.html" class="active">Write</a>
       <a href="index.html" class="btn-blog">View Blog</a>
     </div>
+    <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">🌙</button>
   </nav>
 
   <div class="editor-header">
@@ -435,6 +474,18 @@ function deletePublished(i) {
   renderLists();
   saveMsg(`"${title}" deleted.`, 'var(--txt2)');
 }
+// theme toggle
+(function(){
+  const btn=document.getElementById('theme-btn');
+  if(!btn)return;
+  const stored=localStorage.getItem('srt_theme');
+  if(stored==='light'){document.documentElement.classList.add('light');btn.textContent='☀️';}
+  btn.addEventListener('click',()=>{
+    const isLight=document.documentElement.classList.toggle('light');
+    btn.textContent=isLight?'☀️':'🌙';
+    localStorage.setItem('srt_theme',isLight?'light':'dark');
+  });
+})();
 </script>
 </body>
 </html>

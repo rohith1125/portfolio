@@ -67,6 +67,55 @@ html.light .fcmd kbd { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.12
 html.light ::-webkit-scrollbar-track { background: var(--bg); }
 html.light ::-webkit-scrollbar-thumb { background: var(--bg4); }
 html.light { --cur-ring: rgba(10,132,255,0.2); }
+/* hardcoded rgba overrides for light mode */
+html.light nav { border-bottom-color: rgba(0,0,0,0.1); }
+html.light .nav-links a:hover { background: rgba(0,0,0,.05); }
+html.light .cmd-btn { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.1); color: var(--t2); }
+html.light .cmd-btn:hover { background: rgba(0,0,0,.1); color: var(--t1); }
+html.light .edu-card { background: rgba(255,255,255,.85); border-color: rgba(0,0,0,.1); }
+html.light .edu-card:hover { border-color: rgba(0,0,0,.2); }
+html.light .stag { background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.1); color: var(--t2); }
+html.light .stag:hover { background: rgba(0,0,0,.08); border-color: rgba(0,0,0,.2); color: var(--t1); }
+html.light .pcard { background: #ffffff; border-color: rgba(0,0,0,.1); }
+html.light .pcard:hover { border-color: rgba(0,0,0,.25); }
+html.light .pcard::after { background: rgba(0,0,0,.02); }
+html.light .pcard-arrow { background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.1); }
+html.light .pcard:hover .pcard-arrow { background: var(--accent); border-color: var(--accent); color: #fff; }
+html.light .ptag { background: rgba(0,0,0,.04); border-color: rgba(0,0,0,.1); color: var(--t3); }
+html.light .wcard { background: #ffffff; border-color: rgba(0,0,0,.1); }
+html.light .wcard:hover { border-color: rgba(0,0,0,.2); }
+html.light .wcard::before { background: var(--accent); }
+html.light .clink { background: rgba(255,255,255,.9); border-color: rgba(0,0,0,.1); }
+html.light .clink:hover { border-color: rgba(0,0,0,.25); }
+html.light .clink-icon { background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.1); }
+html.light .clink-icon svg { fill: var(--t2); }
+html.light .clink-arr { color: var(--t3); }
+html.light .clink:hover .clink-arr { color: var(--t1); }
+html.light .modal { background: #f0f0f5; border-color: rgba(0,0,0,.12); }
+html.light .modal-hdr { border-bottom-color: rgba(0,0,0,.08); }
+html.light .modal-bd { background: #f0f0f5; }
+html.light .modal-canvas { background: rgba(0,0,0,.04); border-color: rgba(0,0,0,.1); }
+html.light .mtag { background: rgba(0,0,0,.05); border-color: rgba(0,0,0,.1); color: var(--t2); }
+html.light .mlink-g { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.12); color: var(--t1); }
+html.light .mlink-g:hover { background: rgba(0,0,0,.1); }
+html.light .resume-dl { border-bottom-color: rgba(0,0,0,.2); color: var(--t3); }
+html.light .resume-dl:hover { color: var(--t1); border-bottom-color: rgba(0,0,0,.5); }
+html.light .avail-pill { background: rgba(48,209,88,.12); border-color: rgba(48,209,88,.3); }
+html.light .tl::before { background: linear-gradient(to bottom, var(--accent), rgba(10,132,255,.15), transparent); }
+html.light .tl-dot { background: var(--accent); border-color: var(--bg); }
+html.light .pcard-desc { color: var(--t2); }
+html.light .pcard-name { color: var(--t1); }
+html.light .scroll-cue { color: var(--t3); }
+html.light .fcmd { color: var(--t3); }
+html.light .fcmd kbd { background: rgba(0,0,0,.06); border-color: rgba(0,0,0,.12); color: var(--t2); }
+html.light .cmd-lbl { color: var(--t1); }
+html.light .cmd-gl { color: var(--t3); }
+html.light .cmd-ico { background: rgba(0,0,0,.05); }
+html.light .cmd-foot { border-top-color: rgba(0,0,0,.06); }
+html.light .status-badge { background: rgba(48,209,88,.1); border-color: rgba(48,209,88,.25); }
+html.light .sg-lbl { color: var(--t3); }
+html.light #hero { background: var(--bg); }
+html.light .hero-h1 em { color: var(--accent); }
 body{background:var(--bg);color:var(--t1);font-family:'Inter',var(--fm);line-height:1.6;overflow-x:hidden;cursor:none;}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;}
 @media(pointer:fine){*{cursor:none!important;}}
